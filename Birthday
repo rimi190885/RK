@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Keshav!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #6a11cb, #2575fc);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px;
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            clip-path: polygon(50% 0, 100% 25%, 75% 100%, 50% 75%, 25% 100%, 0 25%);
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-500px); opacity: 0; }
+        }
+        .heart:nth-child(even) {
+            animation-delay: 2s;
+        }
+        .music {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .message {
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            width: 80%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #2575fc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday, Keshav!</h1>
+    <div class="message">
+        <p>Keshav, you’ve been the biggest green flag in my life since 2021. From being enemies to soulmates, and now best friends again, you’ve shown me what unconditional support, kindness, and love truly mean.</p>
+        <p>You’re the most gentlemanly, sweetest, and cutest person I’ve ever known. Thank you for standing by me through every phase of our journey. You mean the world to me, and I’m so grateful to have you in my life.</p>
+        <p>Today, I celebrate YOU — the incredible person who’s been my everything at different times in my life. Here's to more memories, laughs, and moments that matter. You’re too special for words. 💚</p>
+    </div>
+    <button onclick="revealSurprise()">Click for a Surprise</button>
+
+    <audio id="bg-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-birthday.mp3" type="audio/mp3">
+    </audio>
+    <div class="music" onclick="toggleMusic()">🎵</div>
+
+    <script>
+        const body = document.body;
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+
+        function revealSurprise() {
+            alert("Your life is a blessing to everyone around you, Keshav. Here's to more beautiful years ahead!");
+        }
+    </script>
+</body>
+</html>
